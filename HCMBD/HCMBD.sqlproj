@@ -13,7 +13,7 @@
     <RootPath>
     </RootPath>
     <RootNamespace>flxDB_Config</RootNamespace>
-    <AssemblyName>flxDB_Config</AssemblyName>
+    <AssemblyName>HCMBD</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -62,42 +62,7 @@
     <Folder Include="scripts\data" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="scripts\data\aspnetprofiles.sql" />
-    <None Include="scripts\data\aspnetusers.sql" />
-    <None Include="scripts\data\interfaces.sql" />
-    <None Include="scripts\data\menus.sql" />
-    <None Include="scripts\data\modules.sql" />
-    <None Include="scripts\data\navigation_nodes.sql" />
-    <None Include="scripts\data\objects.sql" />
-    <None Include="scripts\data\objects_processes.sql" />
-    <None Include="scripts\data\objects_properties.sql" />
-    <None Include="scripts\data\objects_properties_dependencies.sql" />
-    <None Include="scripts\data\objects_templates.sql" />
-    <None Include="scripts\data\objects_views.sql" />
-    <None Include="scripts\data\objects_views_properties.sql" />
-    <None Include="scripts\data\pages.sql" />
-    <None Include="scripts\data\pages_modules.sql" />
-    <None Include="scripts\data\processes.sql" />
-    <None Include="scripts\data\processes_classification.sql" />
-    <None Include="scripts\data\processes_params.sql" />
-    <None Include="scripts\data\security_navigation_nodes_roles.sql" />
-    <None Include="scripts\data\security_objects_roles.sql" />
-    <None Include="scripts\data\toolbars.sql" />
-    <None Include="scripts\data\toolbars_buttons.sql" />
-  </ItemGroup>
-  <ItemGroup>
     <PostDeploy Include="scripts\Script.PostDeployment.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <ArtifactReference Include="..\flxWeb\db\FlexyGoBD.dacpac">
-      <HintPath>..\flxWeb\db\FlexyGoBD.dacpac</HintPath>
-      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
-    </ArtifactReference>
-    <ArtifactReference Include="..\flxWeb\db\master.dacpac">
-      <HintPath>..\flxWeb\db\master.dacpac</HintPath>
-      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
-      <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
-    </ArtifactReference>
   </ItemGroup>
   <ItemGroup>
     <SqlCmdVariable Include="CurrentDacVersion">
@@ -112,7 +77,42 @@
   <ItemGroup>
     <PreDeploy Include="scripts\Script.PreDeployment1.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <ArtifactReference Include="..\HCM\db\FlexyGoBD.dacpac">
+      <HintPath>..\HCM\db\FlexyGoBD.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+    </ArtifactReference>
+    <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac">
+      <HintPath>$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
+    </ArtifactReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="scripts\data\aspnetprofiles.sql" />
+    <Build Include="scripts\data\aspnetusers.sql" />
+    <Build Include="scripts\data\interfaces.sql" />
+    <Build Include="scripts\data\menus.sql" />
+    <Build Include="scripts\data\modules.sql" />
+    <Build Include="scripts\data\navigation_nodes.sql" />
+    <Build Include="scripts\data\objects.sql" />
+    <Build Include="scripts\data\objects_processes.sql" />
+    <Build Include="scripts\data\objects_properties.sql" />
+    <Build Include="scripts\data\objects_properties_dependencies.sql" />
+    <Build Include="scripts\data\objects_templates.sql" />
+    <Build Include="scripts\data\objects_views.sql" />
+    <Build Include="scripts\data\objects_views_properties.sql" />
+    <Build Include="scripts\data\pages.sql" />
+    <Build Include="scripts\data\pages_modules.sql" />
+    <Build Include="scripts\data\processes.sql" />
+    <Build Include="scripts\data\processes_classification.sql" />
+    <Build Include="scripts\data\processes_params.sql" />
+    <Build Include="scripts\data\security_navigation_nodes_roles.sql" />
+    <Build Include="scripts\data\security_objects_roles.sql" />
+    <Build Include="scripts\data\toolbars.sql" />
+    <Build Include="scripts\data\toolbars_buttons.sql" />
+  </ItemGroup>
   <PropertyGroup>
-    <PostBuildEvent>powershell -ExecutionPolicy Unrestricted -Command "&amp; '$(SolutionDir)flxWeb\db\mergeSSDTScripts.ps1' '$(SolutionDir)' '$(ProjectName)' '$(OutputPath)' '$(TargetPath)'"</PostBuildEvent>
+    <PostBuildEvent>powershell -ExecutionPolicy Unrestricted -Command "&amp; '$(SolutionDir)HCM\db\mergeSSDTScripts.ps1' '$(SolutionDir)' '$(ProjectName)' '$(OutputPath)' '$(TargetPath)'"</PostBuildEvent>
   </PropertyGroup>
 </Project>

@@ -13,7 +13,7 @@
     <RootPath>
     </RootPath>
     <RootNamespace>flxDB_Data</RootNamespace>
-    <AssemblyName>flxDB_Data</AssemblyName>
+    <AssemblyName>HCM_DataBD</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>

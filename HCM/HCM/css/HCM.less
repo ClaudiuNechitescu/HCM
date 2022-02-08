@@ -1,0 +1,247 @@
+/*#region Property Promoters*/
+.ellipsisNoWidth {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pp-list-caption {
+    color: lighten(dbColor(txtModuleColor), 30);
+    font-size: 18px;
+    margin: 10px 0 !important;
+}
+
+.pp-list-row {
+    padding: 15px 0 !important;
+    background-color: fadeout(dbColor(InfoColor), 92%);
+    margin: 5px 0;
+    border-radius: 5px;
+    font-weight: bold !important;
+    cursor: pointer;
+
+    &:hover {
+        background-color: fadeout(dbColor(ToolsColor), 92%);
+    }
+}
+
+.pp-list-border-success {
+    border-left: solid 10px fadeout(dbColor(SuccessColor), 40%);
+}
+
+.pp-list-border-warning {
+    border-left: solid 10px fadeout(dbColor(WarningColor), 40%);
+}
+
+.pp-list-border-danger {
+    border-left: solid 10px fadeout(dbColor(DangerColor), 40%);
+}
+
+.pp-list-border-tools {
+    border-left: solid 10px fadeout(dbColor(ToolsColor), 40%);
+}
+
+.pp-list-border-info {
+    border-left: solid 10px fadeout(dbColor(InfoColor), 40%);
+}
+
+.pp-list-border-notify {
+    border-left: solid 10px fadeout(dbColor(NotifyColor), 40%);
+}
+
+.pp-list-border-outstanding {
+    border-left: solid 10px fadeout(dbColor(OutstandingColor), 40%);
+}
+
+.pp-list-border-primary {
+    border-left: solid 10px fadeout(dbColor(PrimaryColor), 40%);
+}
+
+.pp-list-status {
+    box-sizing: border-box;
+    display: inline-block;
+    border-radius: 4px;
+    opacity: 0.6;
+    padding: 5px 10px;
+}
+
+
+.pp-list-status-text {
+    color: white;
+}
+
+.pp_flex-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.pp_align-items-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pp_align-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* #endregion Property Promoters*/
+
+/* #region PP Employee Cards*/
+.pp-employee-card {
+    display: flex;
+    justify-content: center;
+    padding: 7px;
+    max-height: 450px;
+    min-height: 200px;
+
+    flx-navbutton {
+        flex-grow: 1;
+
+        > div {
+            transition: all 0.3s ease-in-out 0s;
+            cursor: pointer;
+            background-color: white;
+
+            > div:first-of-type img {
+                width: 100%;
+                max-width: 100px;
+            }
+        }
+    }
+}
+
+.pp-border-hover {
+    border: 1px solid dbColor(borderModuleColor);
+    transition: all 0.3s ease-in-out 0s;
+
+    &:hover {
+        box-shadow: 0px 4px 6px 1px rgba(0,0,0,0.14);
+    }
+}
+/*#endregion PP Employee Cards*/
+
+/*#region PP Client View*/
+
+.pp-breadcrumb {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease-in-out 0s;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: dbColor(bgColor);
+    border: 1px solid dbColor(borderModuleColor);
+    margin-top: 59px;
+    margin-left: 190px;
+    font-size: 18px !important;
+    z-index: 1;
+
+    .pp-breadcrumb-section {
+        cursor: pointer;
+        display: inline;
+        margin-right: 10px;
+
+        &.active {
+            color: dbColor(OutstandingColor);
+            cursor: unset;
+        }
+
+        &:not(.active) {
+            color: #aaa;
+        }
+
+        &:hover {
+            color: dbColor(OutstandingColor);
+        }
+    }
+
+    @media (max-width: 993px) {
+        padding: 10px 10px;
+        margin-left: 0 !important;
+    }
+}
+
+.ui-dialog .ui-dialog-content .pp-breadcrumb {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease-in-out 0s;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: dbColor(bgColor);
+    margin-top: 0;
+    margin-left: 0;
+    font-size: 18px !important;
+    z-index: 1;
+}
+
+.pp-boxType {
+    border-radius: 10px;
+    margin-top: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.pp-Subtype {
+    margin-top: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    max-width: 100%
+}
+
+.pp-title {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.pp-address {
+    font-size: 14px;
+    color: dbColor(NotifyColor);
+}
+
+.pp-country {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: dbColor(NotifyColor);
+}
+
+.pp-labelField {
+    font-size: 12px;
+    color: lighten(dbColor(PrimaryColor),1%);
+}
+
+.pp-reference {
+    font-size: 14px;
+    font-weight: lighter;
+    color: #757475;
+    text-transform: uppercase;
+}
+
+.pp-observation {
+    margin-bottom: 16px;
+    text-align: justify;
+}
+
+.margin-top-breadcrumb-m {
+    margin-top: 55px;
+
+    @media (max-width: 792px) {
+        margin-top: 85px;
+    }
+}
+/*#endregion PP Client View*/
+.iflex-top-right {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+}

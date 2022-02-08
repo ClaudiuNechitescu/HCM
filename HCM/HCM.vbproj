@@ -38,6 +38,19 @@
     <OutputPath>bin\</OutputPath>
     <DocumentationFile>HCM.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <TypeScriptTarget>ES2015</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -388,9 +401,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\flxCustomProcesses\flxCustomProcesses.vbproj">
-      <Project>{d252be48-3097-4162-8473-170fc8e0385d}</Project>
-      <Name>flxCustomProcesses</Name>
+    <ProjectReference Include="..\HCM_Processes\HCM_Processes.vbproj">
+      <Project>{89f7cf30-7f05-4757-9837-e624213c37e5}</Project>
+      <Name>HCM_Processes</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -623,6 +636,7 @@
     <Content Include="Forms\License.aspx" />
     <Content Include="Forms\Reports.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="HCM\img\1.png" />
     <Content Include="img\Avatars\avatar_blank.png" />
     <Content Include="img\background-flexygo.jpg" />
     <Content Include="img\crmbg.png" />
@@ -3194,6 +3208,7 @@
     <Content Include="img\Layouts\Layouts.psd" />
     <Content Include="Forms\Documents\Download.ashx" />
     <Content Include="Errors\Web.config" />
+    <Content Include="HCM\css\HCM.less" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -3223,7 +3238,11 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="HCM\controllers\" />
+    <Folder Include="HCM\plugins\" />
+    <Folder Include="HCM\wc\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Webhooks\GoogleToken.aspx" />
     <Content Include="Webhooks\OfficeToken.aspx" />
